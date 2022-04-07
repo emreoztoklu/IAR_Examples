@@ -32,9 +32,9 @@ void Sys_IoInit(void){
   GPIO_PinRemapConfig(GPIO_Remap_SWJ_JTAGDisable, ENABLE);
 }
 
-void Sys_ClockTick(void){
-  //elapsed time counter
-  ++_tmTick;
+void Sys_ClockTick(void){    // Bu fonksiyon "stm32f10x_it.c" içerisinde çagirilacak
+  //elapsed time counter     // Sistem "SysTick_Handler" her tick kesmesinde tetiklenir
+  ++_tmTick;                 // oda tm_tick counterini bir artirir.
 }
 
 clock_t clock(void){

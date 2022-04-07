@@ -1,10 +1,11 @@
 #ifndef _IO_H
 #define _IO_H
 
+#include "stm32f10x_gpio.h"
+
 #define TURN_OFF 1
 #define TURN_ON  (!TURN_OFF)
 
-#include "stm32f10x_gpio.h"
 
 enum {
   IO_PORT_A,
@@ -27,10 +28,13 @@ enum{
   IO_MODE_ALTERNATE_OD=GPIO_Mode_AF_OD,
 };
 
+
+
 typedef struct {
   int port;
   int pin;
 }IO_PIN;
+
 
 /************************************/
 enum{
@@ -38,7 +42,7 @@ enum{
 };
 
 /************************************/
-#ifdef _IOS_
+#ifdef _IOS_        
   
 IO_PIN _ios[]={
   {IO_PORT_C, 13},   //Bluepill GPIOC 13.pin LED
