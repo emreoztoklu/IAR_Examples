@@ -2,7 +2,7 @@
 
 <workspace>
   <project>
-    <path>$WS_DIR$\Base1.ewp</path>
+    <path>$WS_DIR$\Base1_oldv.ewp</path>
   </project>
   <batchBuild/>
 </workspace>
