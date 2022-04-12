@@ -7,9 +7,9 @@
 #define CLOCKS_PER_SEC 1000
 
 #define CLOCK_FREQ   72000000
-#define INSTR_FREQ   ((CLOCK_FREQ) *8 / 9)      // Bu satır önemli InstructionSet etme zamanı
-#define US_CYCLES    ((INSTR_FREQ) / 1000000)
-#define MS_CYCLES    ((INSTR_FREQ) / 1000)
+#define INSTR_FREQ   ((CLOCK_FREQ) *8 / 9)      // Bu satır önemli InstructionSet etme zamanı  64000000
+#define US_CYCLES    ((INSTR_FREQ) / 1000000)   // 64000000/1000000 = 64
+#define MS_CYCLES    ((INSTR_FREQ) / 1000)      // 64000000/1000    = 64000
 
 /*function like makro*/
 #define DelayUs(us)   __delay((us) * US_CYCLES)    //__delay  delay.s assembly dosyasından geliyor
@@ -20,10 +20,8 @@
 typedef uint32_t clock_t;          
 
 /*
-
- not: 2^32bit/1000persec =>x ,  x/86400 = y gün  
- not2:(60*60*24 = 86400) 
-
+ not : 2^32bit/1000persec =>x ,  x/86400 = y gün  
+ not2: (60*60*24 = 86400) 
 */
 
 /*function declerations */
@@ -38,3 +36,15 @@ void __delay(uint32_t ncy);
 
 
 #endif 
+
+/*
+NOTE:  INSTRUCTION FREQUENCY  : 
+1 assembly komutunun işletilme süresinin bilinmesi
+bunda da 1 osc süresi gerçekten 1 komut işletilme süresine gelip gelmediğinin ölçülmesi gerekir
+
+Soru: Birim komut çalışma süresi  == 1 Tcy   ? 
+  
+Tcy = 1 / Fosc 
+
+
+*/
