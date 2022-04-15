@@ -25,7 +25,7 @@ if not "%~1" == "" goto debugFile
 
 @echo on 
 
-"C:\Program Files\IAR Systems\Embedded Workbench 9.0\common\bin\cspybat" -f "F:\Emre_Dökümanlar\IAR_Projects\IAR_Examples\STM32F1\examples\3_LCD\settings\LCD.Debug.general.xcl" --backend -f "F:\Emre_Dökümanlar\IAR_Projects\IAR_Examples\STM32F1\examples\3_LCD\settings\LCD.Debug.driver.xcl" 
+"C:\Program Files\IAR Systems\Embedded Workbench 9.0\common\bin\cspybat" -f "F:\Emre_Dokumanlar\IAR_Projects\IAR_Examples\STM32F1\examples\3_LCD\settings\LCD.Debug.general.xcl" --backend -f "F:\Emre_Dokumanlar\IAR_Projects\IAR_Examples\STM32F1\examples\3_LCD\settings\LCD.Debug.driver.xcl" 
 
 @echo off 
 goto end 
@@ -34,7 +34,7 @@ goto end
 
 @echo on 
 
-"C:\Program Files\IAR Systems\Embedded Workbench 9.0\common\bin\cspybat" -f "F:\Emre_Dökümanlar\IAR_Projects\IAR_Examples\STM32F1\examples\3_LCD\settings\LCD.Debug.general.xcl" "--debug_file=%~1" --backend -f "F:\Emre_Dökümanlar\IAR_Projects\IAR_Examples\STM32F1\examples\3_LCD\settings\LCD.Debug.driver.xcl" 
+"C:\Program Files\IAR Systems\Embedded Workbench 9.0\common\bin\cspybat" -f "F:\Emre_Dokumanlar\IAR_Projects\IAR_Examples\STM32F1\examples\3_LCD\settings\LCD.Debug.general.xcl" "--debug_file=%~1" --backend -f "F:\Emre_Dokumanlar\IAR_Projects\IAR_Examples\STM32F1\examples\3_LCD\settings\LCD.Debug.driver.xcl" 
 
 @echo off 
 :end

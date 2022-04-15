@@ -259,10 +259,6 @@
             <name>$PROJ_DIR$\Debug\Exe\LCD.out</name>
             <outputs>
                 <tool>
-                    <name>OBJCOPY</name>
-                    <file> 68</file>
-                </tool>
-                <tool>
                     <name>ILINK</name>
                     <file> 72</file>
                 </tool>
