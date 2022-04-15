@@ -3,9 +3,11 @@
 
 #include "stm32f10x_gpio.h"
 
-#define TURN_OFF 1
-#define TURN_ON  (!TURN_OFF)
+#define PIN_SET 1
+#define PIN_RESET (!PIN_SET)
 
+#define TURN_ON 0
+#define TURN_OFF  (!TURN_ON)
 
 enum {
   IO_PORT_A,
@@ -29,7 +31,6 @@ enum{
 };
 
 
-
 typedef struct {
   int port;
   int pin;
@@ -39,14 +40,29 @@ typedef struct {
 /************************************/
 enum{
   IOP_LED,          //Bluepill Ledpin
+  
+  /*LCD Modül Pin Tanimlamari*/
+  IOP_LCD_RS,
+  IOP_LCD_E,
+  IOP_LCD_DB4,
+  IOP_LCD_DB5,
+  IOP_LCD_DB6,
+  IOP_LCD_DB7,
 };
 
 /************************************/
 #ifdef _IOS_        
   
 IO_PIN _ios[]={
-  {IO_PORT_C, 13},   //Bluepill GPIOC 13.pin LED
-
+  {IO_PORT_C, 13},   //Bluepill GPIOC l13.pin LED
+  
+  /*LCD Modül Pin Tanimlamari*/
+  {IO_PORT_B, 9},   // IOP_LCD_RS 
+  {IO_PORT_B, 8},   // IOP_LCD_E
+  {IO_PORT_B, 7},   // IOP_LCD_DB4
+  {IO_PORT_B, 6},   // IOP_LCD_DB5
+  {IO_PORT_B, 5},   // IOP_LCD_DB6
+  {IO_PORT_B, 4},   // IOP_LCD_DB7
 };
 
 GPIO_TypeDef *_GPIO_Ports[]={

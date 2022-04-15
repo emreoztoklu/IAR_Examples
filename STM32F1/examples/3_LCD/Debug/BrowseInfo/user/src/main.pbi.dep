@@ -38,4 +38,5 @@ F:\Emre_Dökümanlar\IAR_Projects\IAR_Examples\STM32F1\examples\3_LCD\Debug\Brow
   F:\Emre_Dökümanlar\IAR_Projects\IAR_Examples\STM32F1\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h \
   F:\Emre_Dökümanlar\IAR_Projects\IAR_Examples\STM32F1\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_wwdg.h \
   F:\Emre_Dökümanlar\IAR_Projects\IAR_Examples\STM32F1\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h \
-  F:\Emre_Dökümanlar\IAR_Projects\IAR_Examples\STM32F1\examples\3_LCD\user\inc\io.h
+  F:\Emre_Dökümanlar\IAR_Projects\IAR_Examples\STM32F1\examples\3_LCD\user\inc\io.h \
+  F:\Emre_Dökümanlar\IAR_Projects\IAR_Examples\STM32F1\examples\3_LCD\user\inc\lcdm.h
