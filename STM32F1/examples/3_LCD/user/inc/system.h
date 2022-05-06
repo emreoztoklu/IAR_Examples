@@ -4,7 +4,7 @@
 #include "stm32f10x.h"
 
 /*DEFİNES*/
-#define CLOCKS_PER_SEC 1000
+#define CLOCKS_PER_SEC 1000   //1sn
 
 #define CLOCK_FREQ   72000000
 #define INSTR_FREQ   ((CLOCK_FREQ) *8 / 9)      // Bu satır önemli InstructionSet etme zamanı  64000000
