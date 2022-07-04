@@ -1,4 +1,5 @@
-/*#define SET_BIT(REG, BIT)     ((REG) |= (BIT))
+/*
+  #define SET_BIT(REG, BIT)     ((REG) |= (BIT))
   #define CLEAR_BIT(REG, BIT)   ((REG) &= ~(BIT))
   #define READ_BIT(REG, BIT)    ((REG) & (BIT))
   #define CLEAR_REG(REG)        ((REG) = (0x0))
@@ -15,9 +16,9 @@
 #include "io.h"
 
 
-void IO_Init(int idx, int mode){
+void IO_Init(uint8_t idx, uint8_t mode){
   GPIO_InitTypeDef ioInit;
-  int port;
+  uint32_t port;
   
   ioInit.GPIO_Mode  = (GPIOMode_TypeDef)mode;
   ioInit.GPIO_Speed = GPIO_Speed_50MHz;
@@ -28,8 +29,8 @@ void IO_Init(int idx, int mode){
 }
 
 
-void IO_Write(int idx, int val){
-  int port;
+void IO_Write(uint8_t idx, uint8_t val){
+  uint32_t port;
   port = _ios[idx].port;
   /*
   if(val)
@@ -44,11 +45,11 @@ void IO_Write(int idx, int val){
     case TURN_OFF:
       _GPIO_Ports[port]->BSRR = (1 << _ios[idx].pin);
       break;
-  }
+  };
 }
 
-int  IO_Read(int idx){
-  int port;
+uint8_t  IO_Read(uint8_t idx){
+  uint32_t port;
   port = _ios[idx].port;
   
   return (_GPIO_Ports[port]->IDR & (1 << _ios[idx].pin)) != 0;

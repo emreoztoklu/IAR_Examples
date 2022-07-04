@@ -1,11 +1,10 @@
 #ifndef _IO_H
 #define _IO_H
 
-#include "stm32f10x_gpio.h"
-
 #define TURN_OFF 1
-#define TURN_ON  (!TURN_OFF)
+#define TURN_ON (!TURN_OFF)
 
+#include "stm32f10x_gpio.h"
 
 enum {
   IO_PORT_A,
@@ -28,25 +27,27 @@ enum{
   IO_MODE_ALTERNATE_OD=GPIO_Mode_AF_OD,
 };
 
-
-
 typedef struct {
   int port;
   int pin;
 }IO_PIN;
 
-
 /************************************/
 enum{
   IOP_LED,          //Bluepill Ledpin
+  IOP_TEST,         //Test amaçlý B5
+  IOP_INPUT,        //Test amaçlý input okuma A3
+
 };
 
 /************************************/
-#ifdef _IOS_        
+#ifdef _IOS_
   
 IO_PIN _ios[]={
   {IO_PORT_C, 13},   //Bluepill GPIOC 13.pin LED
-
+  {IO_PORT_B, 5},    //Test amaçlý B5
+  {IO_PORT_A, 3},    //Test amaçlý input okuma A3
+  
 };
 
 GPIO_TypeDef *_GPIO_Ports[]={
@@ -61,8 +62,8 @@ GPIO_TypeDef *_GPIO_Ports[]={
 
 #endif 
 /************************************/
-void IO_Init(int idx, int mode);
-void IO_Write(int idx, int val);
-int  IO_Read(int idx);
+void IO_Init(uint8_t idx, uint8_t mode);
+void IO_Write(uint8_t idx, uint8_t val);
+uint8_t IO_Read(uint8_t idx);
 
 #endif 

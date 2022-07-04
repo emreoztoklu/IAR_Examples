@@ -316,10 +316,10 @@
         <option>
           <name>CCIncludePath2</name>
           <state>$PROJ_DIR$</state>
-          <state>$PROJ_DIR$\user\src</state>
           <state>$PROJ_DIR$\user\inc</state>
-          <state>$PROJ_DIR$\..\..\Libraries\STM32F10x_StdPeriph_Driver\src</state>
+          <state>$PROJ_DIR$\user\src</state>
           <state>$PROJ_DIR$\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc</state>
+          <state>$PROJ_DIR$\..\..\Libraries\STM32F10x_StdPeriph_Driver\src</state>
         </option>
         <option>
           <name>CCStdIncCheck</name>
@@ -1943,13 +1943,13 @@
       <name>$PROJ_DIR$\user\src\stm32f10x_it.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\user\inc\stm32f10x_it.h</name>
+      <name>$PROJ_DIR$\stm32f10x_it.h</name>
     </file>
     <file>
       <name>$PROJ_DIR$\user\src\system_stm32f10x.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\user\inc\system_stm32f10x.h</name>
+      <name>$PROJ_DIR$\system_stm32f10x.h</name>
     </file>
   </group>
   <group>
@@ -1979,7 +1979,7 @@
       <name>$PROJ_DIR$\user\src\system.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\user\inc\system.h</name>
+      <name>$PROJ_DIR$\system.h</name>
     </file>
   </group>
 </project>

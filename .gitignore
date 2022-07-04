@@ -4,3 +4,8 @@ STM32F1/examples/3_LCD/Debug
 STM32F1/examples/3_LCD/Debug
 STM32F1/StateMachine_LedOnOff_v1.1/Debug
 STM32F1/examples/0_TaskMgr/Debug
+STM32F1/examples/1_LedOnOff/Debug
+STM32F1/examples/1_LedOnOff/settings
+STM32F1/examples/2_StateMachine_LedOnOff_v1.1/Debug
+STM32F1/examples/2_StateMachine_LedOnOff_v1.1/settings
+STM32F1/examples/3_LCD/settings
