@@ -62,6 +62,7 @@ void LCD_PutChar(unsigned char ch){
   LCD_SendData(ch);                         // 8-bit veri gönderimi
 }
 
+
 //Ekrani temizleme komutu
 void LCD_Clear(void){
   LCD_SendCmd(0x01);
@@ -70,7 +71,12 @@ void LCD_Clear(void){
 }
 
 void LCD_DisplayOn(unsigned char mode){
+  if (mode == 0U){
+    LCD_SendCmd(0x08 | LCD_MODE_ON | LCD_MODE_CURSOR |LCD_MODE_BLINK);
+  }
+  else{
     LCD_SendCmd(0x08 | mode);      //  Table 6 Instructions
+  }
 }
 
 void LCD_SetCursor(unsigned char pos){
@@ -118,7 +124,23 @@ void LCD_init(void){
   LCD_DisplayOn(LCD_MODE_ON);   //LCD Display ON
 } 
 
-
+//LCD modül printf destek fonksiyonu
+void LCD_putch(unsigned char ch){
+  switch(ch){
+    case'\r':
+      LCD_SetCursor(0);
+      break; 
+    case'\n':
+      LCD_SetCursor(0x40);
+      break;
+    case'\f':
+      LCD_Clear();
+      break;
+    default:
+      LCD_PutChar(ch);
+      break;
+  }
+}
 
 
 

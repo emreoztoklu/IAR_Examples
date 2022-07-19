@@ -1,6 +1,9 @@
 #ifndef _IO_H
 #define _IO_H
 
+#define PIN_SET 1
+#define PIN_RESET (!PIN_SET)
+
 #define TURN_OFF 1
 #define TURN_ON (!TURN_OFF)
 
@@ -35,19 +38,29 @@ typedef struct {
 /************************************/
 enum{
   IOP_LED,          //Bluepill Ledpin
-  IOP_TEST,         //Test amaçlý B5
-  IOP_INPUT,        //Test amaçlý input okuma A3
-
+  
+  /*LCD Mod?l Pin Tanimlamari*/
+  IOP_LCD_RS,
+  IOP_LCD_E,
+  IOP_LCD_DB4,
+  IOP_LCD_DB5,
+  IOP_LCD_DB6,
+  IOP_LCD_DB7,
 };
 
 /************************************/
 #ifdef _IOS_
   
 IO_PIN _ios[]={
-  {IO_PORT_C, 13},   //Bluepill GPIOC 13.pin LED
-  {IO_PORT_B, 5},    //Test amaçlý B5
-  {IO_PORT_A, 3},    //Test amaçlý input okuma A3
+  {IO_PORT_C, 13},   //Bluepill GPIOC l13.pin LED
   
+  /*LCD Mod?l Pin Tanimlamari*/
+  {IO_PORT_B, 9},   // IOP_LCD_RS 
+  {IO_PORT_B, 8},   // IOP_LCD_E
+  {IO_PORT_B, 7},   // IOP_LCD_DB4
+  {IO_PORT_B, 6},   // IOP_LCD_DB5
+  {IO_PORT_B, 5},   // IOP_LCD_DB6
+  {IO_PORT_B, 4},   // IOP_LCD_DB7
 };
 
 GPIO_TypeDef *_GPIO_Ports[]={

@@ -2,6 +2,7 @@
 #define _SYSTEM_H
 
 #include "stm32f10x.h"
+#include "lcdm.h"
 
 /*DEFİNES*/
 #define CLOCKS_PER_SEC 1000   //1sn
@@ -30,6 +31,7 @@ void Sys_ClockInit(void);
 void Sys_ClockTick(void);
 
 void Sys_IoInit(void);
+void Sys_ConsoleInit(void);
 
 void __delay(uint32_t ncy);
 

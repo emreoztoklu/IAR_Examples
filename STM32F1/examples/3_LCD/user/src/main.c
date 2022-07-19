@@ -7,21 +7,21 @@
 
 /* funtion prototypes */
 void Task_LED(void);
-
+void Task_printf(void);
 
 void init(void){
   /* System Clock Init*/
   Sys_ClockInit(); 
   
   /* I/O portlarýna Clock verildi ve baþlatýldý*/
-  Sys_IoInit();    
+  Sys_IoInit();
+  
+  /*Console yazma*/
+  Sys_ConsoleInit();
 
   /*LED start conditions*/
   IO_Write(IOP_LED, TURN_OFF);
   IO_Init(IOP_LED, IO_MODE_OUTPUT);
-  
-  //LCD Modül Baslangiç
-  LCD_init();
 }
 
 
@@ -32,7 +32,8 @@ int main(){
   init();
   
   LCD_DisplayOn(LCD_MODE_ON | LCD_MODE_CURSOR );
-  LCD_SetCursor(0x04);      // 1.satir 4. sutün adresi 0x04
+  /*
+  LCD_SetCursor(0x00);      //0x04 1.satir 4. sutün adresi 0x04
   LCD_PutChar('T');
   LCD_PutChar('E');
   LCD_PutChar('S');
@@ -43,7 +44,9 @@ int main(){
   LCD_PutChar('S');
   LCD_PutChar('T');
   LCD_PutChar('2');   
+ */
   
+  printf("Merhaba\n");
   
   
   /*Görev çevrimi (Task Loop)*/
@@ -51,6 +54,7 @@ int main(){
   while(1){
     
     Task_LED();
+    Task_printf();
     
   }
   
@@ -88,4 +92,11 @@ void Task_LED(void){
        }
       break;
   }
+}
+
+
+void Task_printf(void){
+  static int count;
+  
+  printf("Sayi=%d\r\n",(int)(++count/1000));
 }

@@ -3,6 +3,11 @@
 
 #include "system.h"
 
+#define _STDIN  0
+#define _STDOUT 1
+#define _STDERR 2
+
+
 #define size(x)  (sizeof(x) / sizeof(x[0]))
 
 static volatile clock_t _tmTick;
@@ -44,3 +49,40 @@ clock_t clock(void){
 void Sys_ClockInit(void){
   SysTick_Config(SystemCoreClock / CLOCKS_PER_SEC);
 }
+
+
+void _putch(unsigned char ch){
+   LCD_putch(ch);
+}
+
+void Sys_ConsoleInit(void){
+  LCD_init();       //LCD Modül Baslangiç
+  
+#ifndef __IAR_SYSTEMS_ICC__
+setvbuf(stdout, NULL, _IONBF, 0);
+#endif
+}
+
+
+#ifdef __IAR_SYSTEMS_ICC__
+size_t __write(int handle, unsigned char *buffer, size_t size){
+#else
+size_t _write(int handle, unsigned char *buffer, size_t size){
+#endif
+  size_t nChars = 0;
+  
+  if(buffer == NULL)
+    return 0;
+  
+  if(handle != _STDOUT && handle != _STDERR)
+    return 0;
+  
+  while(size--){
+    _putch(*buffer++);
+    ++nChars;
+  }
+  return nChars;
+}
+
+
+
