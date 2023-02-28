@@ -9,3 +9,7 @@ STM32F1/examples/1_LedOnOff/settings
 STM32F1/examples/2_StateMachine_LedOnOff_v1.1/Debug
 STM32F1/examples/2_StateMachine_LedOnOff_v1.1/settings
 STM32F1/examples/3_LCD/settings
+STM32F1/examples/6_BUTTON_2/Debug/Exe
+STM32F1/examples/6_BUTTON_2/Debug
+STM32F1/examples/5_BUTTON/Debug
+STM32F1/examples/4_UART_LCD/Debug
